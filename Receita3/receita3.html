@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>   
+   <head>
+      <meta charset="UTF-8">      
+      <title>Receita 3 - Cervejas</title>
+      <link rel="stylesheet" href="estilo.css">
+   </head>
+
+   <body>
+
+      
+      <div id="area-botao">
+         <button id="botaoCarregar">Carregar cerveja</button>
+      </div> 
+
+      
+      <div id="conteudo" class="invisivel"></div> 
+
+   </body>   
+
+   <script>
+      function alternarCerveja() {
+         let div = document.getElementById("conteudo");
+
+         
+         if (div.classList.contains("visivel")) {
+            div.classList.remove("visivel");
+            div.classList.add("invisivel");
+         } else {
+            
+            div.innerHTML = `<h1>Guinness</h1>`;
+            div.classList.remove("invisivel");
+            div.classList.add("visivel");
+         }
+      }
+
+      let botao = document.getElementById("botaoCarregar");
+      botao.addEventListener("click", alternarCerveja);                 
+   </script>
+</html>

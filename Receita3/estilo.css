@@ -1,0 +1,14 @@
+/* Efeito de transição suave (fade in / fade out) */
+#conteudo {
+   transition: opacity 0.5s ease;
+}
+
+/* Quando estiver visível: opacidade total */
+.visivel {
+   opacity: 1;
+}
+
+/* Quando estiver invisível: opacidade zero (escondido) */
+.invisivel {
+   opacity: 0;
+}
