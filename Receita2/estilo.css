@@ -1,0 +1,38 @@
+/* Estilo dos versos normais */
+p.verso {
+   color: blue;
+}
+
+/* Nova classe para os dois últimos versos */
+p.mote {
+   color: red;
+}
+
+/* Estilo do link normal */
+a.meu-link {
+   color: green;
+   text-decoration: none;
+}
+
+/* Quando passa o mouse por cima do link (:hover) */
+a.meu-link:hover {
+   color: orange;
+   text-decoration: underline;
+}
+
+/* Quando o link já foi clicado/visitado (:visited) */
+a.meu-link:visited {
+   color: purple;
+}
+
+/* Toda tag <img> dentro de uma div com classe 'poeta' fica redonda */
+div.poeta img {
+   border-radius: 50%;
+}
+
+/* Estilo do cabeçalho da tabela (th) */
+th {
+   background-color: #d1e7dd;
+   color: black;
+   padding: 8px;
+}
