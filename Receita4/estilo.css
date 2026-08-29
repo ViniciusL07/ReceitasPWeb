@@ -1,0 +1,36 @@
+/* Espaçamento e margem para os botões */
+#botoes {
+   margin-bottom: 20px;
+}
+
+button {
+   padding: 8px 12px;
+   margin-right: 5px;
+   cursor: pointer;
+}
+
+/* Estilo da tabela */
+table.tabela-cervejas {
+   border-collapse: collapse;
+   width: 250px;
+   font-family: sans-serif;
+}
+
+/* Bordas e espaçamento das células */
+table.tabela-cervejas th, 
+table.tabela-cervejas td {
+   border: 1px solid #999;
+   padding: 8px;
+   text-align: left;
+}
+
+/* Cor de fundo do cabeçalho */
+table.tabela-cervejas th {
+   background-color: #f0ad4e;
+   color: white;
+}
+
+/* Efeito zebra/cor de fundo das linhas */
+table.tabela-cervejas tr:nth-child(even) {
+   background-color: #f9f9f9;
+}
