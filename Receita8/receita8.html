@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>   
+   <head>
+      <meta charset="UTF-8">
+      <title>Receita 8 - Usuários com Promise</title>
+      <link rel="stylesheet" href="estilo.css">      
+   </head>
+
+   <body>
+
+      <div id="botoes">
+         <button id="botaoCarregar">Carregar Usuários</button>
+      </div>
+
+      <div id="tabelaDiv"></div>            
+
+   </body>   
+   
+   
+   <script src="tabela.js"></script>
+
+   <script>
+      
+      const carregarUsuarios = () => {
+         // Exibe mensagem de feedback enquanto a requisição é feita
+         document.getElementById("tabelaDiv").innerHTML = "<p>Carregando dados...</p>";
+
+         fetch("https://jsonplaceholder.typicode.com/users")
+            .then(res => res.json())
+            .then(dados => {
+               let usuarios = dados.slice(0, 5);
+               
+               // Chama a função do arquivo tabela.js
+               carregarTabela(
+                  usuarios, 
+                  "tabelaDiv", 
+                  ["ID", "Nome", "Usuário", "E-mail", "Telefone", "Site"], 
+                  ["id", "name", "username", "email", "phone", "website"]
+               );
+            })
+            .catch(err => {
+               document.getElementById("tabelaDiv").innerHTML = `<p>Erro ao carregar dados: ${err}</p>`;
+            });
+      };
+
+      let botao = document.getElementById("botaoCarregar");
+      botao.addEventListener("click", () => carregarUsuarios());                 
+   </script>
+</html>
