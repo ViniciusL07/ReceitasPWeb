@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>   
+   <head>
+      <meta charset="UTF-8">
+      <title>Receita 5 - Sorvetes</title>
+      <link rel="stylesheet" href="estilo.css">
+   </head>
+
+   <body>
+
+      
+      <div id="botoes">
+         <a href="#" id="linkCarregar" class="meu-link-botao">Carregar Sorvetes</a>
+         <a href="#" id="linkOrdenar" class="meu-link-botao">Mostrar Sorvetes Ordenados</a>
+         <a href="#" id="linkEmbaralhar" class="meu-link-botao">Embaralhar Sorvetes</a>
+      </div>
+
+      <div id="meu amor"></div> 
+
+   </body>   
+
+   <script>
+      let sorvetes = ["Pistache", "Doce de Leite", "Ninho com Nutella", "Baunilha", "Chocolate Amargo"];
+
+      
+      const transformarEmLinha = item => `<tr><td>${item}</td></tr>`;
+
+      
+      const exibirTabela = lista => {
+         let linhasHtml = lista.map(transformarEmLinha);
+         
+         let tabelaCompleta = `
+            <table class="tabela-sorvetes">
+               <tr>
+                  <th>Sabor do Sorvete</th>
+               </tr>
+               ${linhasHtml.join("\n")}
+            </table>
+         `;
+
+         let div = document.getElementById("meu amor");
+         div.innerHTML = tabelaCompleta;
+      };
+
+      
+      const carregarDiv = (sorvs) => {
+         exibirTabela(sorvs);
+      };
+
+      
+      const ordenarSorvetes = (sorvs) => {
+         let sorvetesOrdenados = [...sorvs].sort();
+         exibirTabela(sorvetesOrdenados);
+      };
+
+      
+      const embaralharSorvetes = (sorvs) => {
+         let sorvetesEmbaralhados = [...sorvs].sort(() => Math.random() - 0.5);
+         exibirTabela(sorvetesEmbaralhados);
+      };
+
+      
+      document.getElementById("linkCarregar").addEventListener("click", (e) => {
+         e.preventDefault();
+         carregarDiv(sorvetes);
+      });
+
+      document.getElementById("linkOrdenar").addEventListener("click", (e) => {
+         e.preventDefault();
+         ordenarSorvetes(sorvetes);
+      });
+
+      document.getElementById("linkEmbaralhar").addEventListener("click", (e) => {
+         e.preventDefault();
+         embaralharSorvetes(sorvetes);
+      });
+   </script>
+</html>

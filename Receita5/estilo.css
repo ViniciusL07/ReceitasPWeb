@@ -1,0 +1,44 @@
+/* Espaçamento da área dos links */
+#botoes {
+   margin-bottom: 20px;
+}
+
+/* Estilo para transformar links em botões/links interativos */
+.meu-link-botao {
+   display: inline-block;
+   padding: 8px 12px;
+   margin-right: 5px;
+   background-color: #0275d8;
+   color: white;
+   text-decoration: none;
+   border-radius: 4px;
+   font-family: sans-serif;
+   font-size: 14px;
+}
+
+.meu-link-botao:hover {
+   background-color: #025aa5;
+}
+
+/* Estilo da tabela de sorvetes */
+table.tabela-sorvetes {
+   border-collapse: collapse;
+   width: 280px;
+   font-family: sans-serif;
+}
+
+table.tabela-sorvetes th, 
+table.tabela-sorvetes td {
+   border: 1px solid #999;
+   padding: 8px;
+   text-align: left;
+}
+
+table.tabela-sorvetes th {
+   background-color: #f0ad4e;
+   color: white;
+}
+
+table.tabela-sorvetes tr:nth-child(even) {
+   background-color: #f9f9f9;
+}
