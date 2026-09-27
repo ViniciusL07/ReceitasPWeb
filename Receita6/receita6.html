@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>   
+   <head>
+      <meta charset="UTF-8">      
+      <title>Receita 6 - Cervejas Detalhadas</title>
+      <link rel="stylesheet" href="estilo.css">
+   </head>
+
+   <body>
+
+      <div id="botoes">
+         <button id="botaoCarregar">Carregar Cervejas</button>
+      </div>
+
+      
+      <div id="cervejasDiv"></div>            
+
+   </body>   
+
+   <script>
+      
+      let cervejas = [
+         {
+            name: "Guinness", 
+            alcohol: "10%",
+            style: "Imperial Stout",
+            ibu: "45"
+         }, 
+         {
+            name: "Desperados",
+            alcohol: "6%",
+            style: "Lager",
+            ibu: "20"
+         }, 
+         {
+            name: "Becks",
+            alcohol: "5%",
+            style: "Pilsen",
+            ibu: "38"
+         }
+      ];
+
+      // - cs: array de objetos
+      // - elementId: ID do elemento HTML onde a tabela será inserida (default: "cervejasDiv")
+      // - headers: array com os títulos dos cabeçalhos das colunas (default: ["Nome", "Álcool", "Estilo", "Amargor"])
+      // - properties: array com as chaves/propriedades dos objetos a serem exibidas (default: ["name", "alcohol", "style", "ibu"])
+      const carregarDiv = (
+         cs, 
+         elementId = "cervejasDiv", 
+         headers = ["Nome", "Álcool", "Estilo", "Amargor"], 
+         properties = ["name", "alcohol", "style", "ibu"]
+      ) => {
+         const div = document.getElementById(elementId);
+
+         // Monta as tags <th> dinamicamente a partir da lista de cabeçalhos
+         const cabecalhosHtml = headers.map(header => `<th>${header}</th>`).join("");
+
+         // Monta as linhas <tr> dinamicamente mapeando as propriedades especificadas
+         const linhasHtml = cs.map(item => {
+            const celulas = properties.map(prop => `<td>${item[prop] !== undefined ? item[prop] : ""}</td>`).join("");
+            return `<tr>${celulas}</tr>`;
+         });
+
+         // Monta a estrutura final da tabela
+         const tabelaCompleta = `
+            <table class="tabela-cervejas">
+               <thead>
+                  <tr>${cabecalhosHtml}</tr>
+               </thead>
+               <tbody>
+                  ${linhasHtml.join("\n")}
+               </tbody>
+            </table>
+         `;
+
+         div.innerHTML = tabelaCompleta;
+      };
+
+      let botao = document.getElementById("botaoCarregar");
+      botao.addEventListener("click", () => carregarDiv(cervejas));                 
+   </script>
+</html>

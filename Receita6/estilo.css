@@ -1,0 +1,40 @@
+/* Espaçamento e estilo do contêiner de botões */
+#botoes {
+   margin-bottom: 20px;
+}
+
+button {
+   padding: 8px 12px;
+   margin-right: 5px;
+   cursor: pointer;
+}
+
+/* Exercício 2: Estilização da tabela bonita */
+table.tabela-cervejas {
+   border-collapse: collapse;
+   width: 100%;
+   max-width: 600px;
+   font-family: sans-serif;
+   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+}
+
+table.tabela-cervejas th, 
+table.tabela-cervejas td {
+   border: 1px solid #ddd;
+   padding: 10px 12px;
+   text-align: left;
+}
+
+table.tabela-cervejas th {
+   background-color: #f0ad4e;
+   color: white;
+   font-weight: bold;
+}
+
+table.tabela-cervejas tr:nth-child(even) {
+   background-color: #f9f9f9;
+}
+
+table.tabela-cervejas tr:hover {
+   background-color: #f1f1f1;
+}
