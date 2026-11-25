@@ -1,0 +1,58 @@
+.container-client {
+   font-family: sans-serif;
+   padding: 10px;
+}
+
+.form-pesquisa {
+   background-color: #f4f4f4;
+   padding: 15px;
+   border-radius: 6px;
+   margin-bottom: 20px;
+   display: flex;
+   align-items: center;
+   gap: 10px;
+}
+
+.form-pesquisa input {
+   padding: 8px;
+   width: 280px;
+   border: 1px solid #ccc;
+   border-radius: 4px;
+}
+
+.form-pesquisa button {
+   padding: 8px 16px;
+   background-color: #0275d8;
+   color: white;
+   border: none;
+   border-radius: 4px;
+   cursor: pointer;
+}
+
+.form-pesquisa button:disabled {
+   background-color: #999;
+   cursor: not-allowed;
+}
+
+.tabela-filmes {
+   border-collapse: collapse;
+   width: 100%;
+   max-width: 700px;
+   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.tabela-filmes th,
+.tabela-filmes td {
+   border: 1px solid #ddd;
+   padding: 10px;
+   text-align: left;
+}
+
+.tabela-filmes th {
+   background-color: #0275d8;
+   color: white;
+}
+
+.tabela-filmes tr:nth-child(even) {
+   background-color: #f9f9f9;
+}
